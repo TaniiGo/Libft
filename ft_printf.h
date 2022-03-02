@@ -6,7 +6,7 @@
 /*   By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 21:48:11 by keitanig          #+#    #+#             */
-/*   Updated: 2022/03/01 20:35:32 by keitanig         ###   ########.fr       */
+/*   Updated: 2022/03/01 23:12:40 by keitanig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <limits.h>
 # include "libft/libft.h"
 
 int	ft_printf(const char *format, ...);

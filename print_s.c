@@ -6,7 +6,7 @@
 /*   By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 22:03:24 by keitanig          #+#    #+#             */
-/*   Updated: 2022/03/01 20:45:12 by keitanig         ###   ########.fr       */
+/*   Updated: 2022/03/01 23:12:28 by keitanig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int	print_s(va_list arg)
 	if (!str)
 		str = "(null)";
 	len = ft_strlen(str);
+	if (len > INT_MAX)
+		return (-1);
 	return (write(1, str, len));
 }

@@ -6,7 +6,7 @@
 /*   By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:32:10 by keitanig          #+#    #+#             */
-/*   Updated: 2022/03/01 20:41:28 by keitanig         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:34:56 by keitanig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_printf(const char *format, ...)
 {
 	int		outputted_number;
+	int		received_value;
 	va_list	args;
 
 	va_start(args, format);
@@ -23,8 +24,14 @@ int	ft_printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			outputted_number += parse_converting_specifier(*(++format), args);
-			format++;
+			received_value = parse_converting_specifier(*(++format), args);
+			if (received_value >= 0)
+			{
+				outputted_number += received_value;
+				format++;
+			}
+			if (received_value == -1)
+				return (-1);
 		}
 		else
 			outputted_number += write(1, format++, 1);
