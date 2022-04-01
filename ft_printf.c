@@ -6,11 +6,12 @@
 /*   By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:32:10 by keitanig          #+#    #+#             */
-/*   Updated: 2022/03/02 12:34:56 by keitanig         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:05:55 by keitanig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {
@@ -25,13 +26,15 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			received_value = parse_converting_specifier(*(++format), args);
-			if (received_value >= 0)
+			printf("%d\n", received_value);
+			if (received_value == -1)
+				return (-1);
+			else if (received_value > 0)
 			{
 				outputted_number += received_value;
 				format++;
+				printf("in\n");
 			}
-			if (received_value == -1)
-				return (-1);
 		}
 		else
 			outputted_number += write(1, format++, 1);
