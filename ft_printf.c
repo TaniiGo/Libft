@@ -26,14 +26,12 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			received_value = parse_converting_specifier(*(++format), args);
-			printf("%d\n", received_value);
 			if (received_value == -1)
 				return (-1);
-			else if (received_value > 0)
+			else
 			{
 				outputted_number += received_value;
 				format++;
-				printf("in\n");
 			}
 		}
 		else
