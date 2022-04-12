@@ -6,12 +6,11 @@
 /*   By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:32:10 by keitanig          #+#    #+#             */
-/*   Updated: 2022/03/10 19:05:55 by keitanig         ###   ########.fr       */
+/*   Updated: 2022/04/12 16:05:04 by keitanig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {

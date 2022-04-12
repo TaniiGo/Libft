@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: keigo <keigo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 20:39:32 by keigo             #+#    #+#             */
-/*   Updated: 2022/02/05 17:23:52 by keitanig         ###   ########.fr       */
+/*   Created: 2022/01/10 20:22:08 by keigo             #+#    #+#             */
+/*   Updated: 2022/01/11 20:18:08 by keigo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned int	num;
-
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		num = -n;
-	}
-	else
-		num = n;
-	if (10 <= num)
-		ft_putnbr_fd(num / 10, fd);
-	ft_putchar_fd(num % 10 + '0', fd);
+	write(fd, &c, 1);
 }

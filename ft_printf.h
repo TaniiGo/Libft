@@ -6,7 +6,7 @@
 /*   By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 21:48:11 by keitanig          #+#    #+#             */
-/*   Updated: 2022/03/01 23:12:40 by keitanig         ###   ########.fr       */
+/*   Updated: 2022/04/12 16:07:49 by keitanig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 # include <limits.h>
-# include "libft/libft.h"
+# include "libft.h"
 
 int	ft_printf(const char *format, ...);
 int	parse_converting_specifier(const char format, va_list arg);
