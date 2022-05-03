@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keigo <keigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 14:43:36 by keigo             #+#    #+#             */
-/*   Updated: 2022/01/17 15:29:28 by keigo            ###   ########.fr       */
+/*   Updated: 2022/05/03 15:40:21 by keitanig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	if (!s)
+		return (NULL);
 	while (*s)
 	{
 		if (*s == (char)c)

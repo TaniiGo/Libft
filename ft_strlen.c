@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: keigo <keigo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 17:31:07 by keigo             #+#    #+#             */
-/*   Updated: 2022/01/18 15:21:41 by keigo            ###   ########.fr       */
+/*   Updated: 2022/05/03 15:39:46 by keitanig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *str)
 {
 	size_t	count;
 
+	if (!str)
+		return (0);
 	count = 0;
 	while (*str != '\0')
 	{

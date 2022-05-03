@@ -6,7 +6,7 @@
 /*   By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:47:45 by keigo             #+#    #+#             */
-/*   Updated: 2022/04/12 18:57:33 by keitanig         ###   ########.fr       */
+/*   Updated: 2022/05/03 15:35:01 by keitanig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_printf(const char *format, ...);
 char	*ft_straddc(char *str, char c);
 char	*ft_straddc_first(char c);
+char	*get_next_line(int fd);
 
 #endif
