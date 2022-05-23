@@ -6,7 +6,7 @@
 #    By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 18:35:55 by keigo             #+#    #+#              #
-#    Updated: 2022/05/23 16:24:47 by keitanig         ###   ########.fr        #
+#    Updated: 2022/05/23 16:46:12 by keitanig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ ALL_SRCS = $(addprefix $(LIBFT_DIR), $(LIBFT_SRCS)) \
 
 OBJS		=	$(ALL_SRCS:.c=.o)
 
+INCS		=	-I./inc
+
 NAME		=	libft.a
 
 CC			=	gcc
@@ -48,7 +50,7 @@ CFLAGS		=	-Wall -Wextra -Werror
 all: $(NAME)
 
 %.o: %.c
-	$(CC) -c $(CFLAGS) -o $@ $^
+	$(CC) -c $(CFLAGS) $(INCS) -o $@ $^
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
@@ -59,9 +61,9 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-bonus:
-	@make WITH_BONUS=1
+# bonus:
+# 	@make WITH_BONUS=1
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
