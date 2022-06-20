@@ -6,7 +6,7 @@
 #    By: keitanig <keitanig@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 18:35:55 by keigo             #+#    #+#              #
-#    Updated: 2022/05/23 16:46:12 by keitanig         ###   ########.fr        #
+#    Updated: 2022/06/12 16:40:47 by keitanig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,9 @@ PRF_SRCS = ft_printf.c parse.c print_c.c print_di.c print_p.c \
 		
 GNL_SRCS = get_next_line.c
 
-LIBFT_DIR = src/libft/
-PRF_DIR = src/printf/
-GNL_DIR = src/get_next_line/
+LIBFT_DIR = srcs/libft/
+PRF_DIR = srcs/printf/
+GNL_DIR = srcs/get_next_line/
 
 ALL_SRCS = $(addprefix $(LIBFT_DIR), $(LIBFT_SRCS)) \
 		$(addprefix $(PRF_DIR), $(PRF_SRCS)) \
@@ -39,11 +39,11 @@ ALL_SRCS = $(addprefix $(LIBFT_DIR), $(LIBFT_SRCS)) \
 
 OBJS		=	$(ALL_SRCS:.c=.o)
 
-INCS		=	-I./inc
+INCS		=	-I./include
 
 NAME		=	libft.a
 
-CC			=	gcc
+CC			=	cc
 RM			=	rm -f
 CFLAGS		=	-Wall -Wextra -Werror
 
@@ -56,7 +56,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
